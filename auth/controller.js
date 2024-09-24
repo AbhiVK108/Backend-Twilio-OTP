@@ -11,6 +11,7 @@ const generateOTP = () => {
 };
 module.exports = { generateOTP };
 
+// send otp
 const sendOtp = (req, res) => {
     const { phoneNumber } = req.body;
     const otp = generateOTP(); 
@@ -29,6 +30,7 @@ const sendOtp = (req, res) => {
         .catch(err => res.status(500).json({ success: false, message: 'Failed to send OTP', error: err.message }));
 };
 
+// verify otp
 const verifyOtp = (req, res) => {
     const { phoneNumber, otp } = req.body;
 
