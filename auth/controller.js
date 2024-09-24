@@ -30,7 +30,7 @@ const sendOtp = (req, res) => {
         .catch(err => res.status(500).json({ success: false, message: 'Failed to send OTP', error: err.message }));
 };
 
-// verify otp
+// verify otpp
 const verifyOtp = (req, res) => {
     const { phoneNumber, otp } = req.body;
 
